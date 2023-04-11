@@ -26,7 +26,10 @@ class PlayScene extends Phaser.Scene {
         this.cameras.main.setBackgroundColor(0xDDDDDD);
         this.VELOCITY = 5;
         this.player = this.add.sprite(400, 400, 'player', 1).setScale(2);
+
         cursors = this.input.keyboard.createCursorKeys();
+
+        document.getElementById('info').innerHTML = 'Cursor keys: Move';
     }
 
     update() {
@@ -53,6 +56,7 @@ class PlayScene extends Phaser.Scene {
 }
 
 let config = {
+    parent: 'phaser-game',
     type: Phaser.CANVAS,
     render: {
         pixelArt: true
